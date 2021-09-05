@@ -9,7 +9,7 @@ pub type OPJ_INT32 = i32;
 pub type OPJ_UINT32 = u32;
 pub type OPJ_UINT64 = u64;
 pub type OPJ_OFF_T = i64;
-use libc::FILE;
+//use libc::FILE;
 pub type OPJ_SIZE_T = usize;
 #[repr(u32)]
 /// DEPRECATED: use RSIZ, OPJ_PROFILE_* and OPJ_EXTENSION_* instead
@@ -1315,19 +1315,19 @@ extern "C" {
     ///@param cstr_info Codestream information structure
     pub fn opj_destroy_cstr_info(cstr_info: *mut *mut opj_codestream_info_v2_t);
 }
-extern "C" {
+//extern "C" {
     /// Dump the codec information into the output stream
     ///
     /// * `p_codec` —          the jpeg2000 codec.
     /// * `info_flag` —        type of information dump.
     /// * `output_stream` —    output stream where dump the information gotten from the codec.
     ///
-    pub fn opj_dump_codec(
-        p_codec: *mut opj_codec_t,
-        info_flag: OPJ_INT32,
-        output_stream: *mut FILE,
-    );
-}
+    ///pub fn opj_dump_codec(
+//      p_codec: *mut opj_codec_t,
+//        info_flag: OPJ_INT32,
+//      output_stream: *mut FILE,
+//   );
+//}
 extern "C" {
     /// Get the codestream information from the codec
     ///
