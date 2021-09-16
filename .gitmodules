@@ -1,3 +1,6 @@
 [submodule "vendor"]
 	path = vendor
 	url = https://github.com/uclouvain/openjpeg
+[submodule "walloc"]
+	path = walloc
+	url = https://github.com/wingo/walloc
