@@ -47,9 +47,15 @@ fn main() {
     }
 
     if target_arch == "wasm32" {
+        cc.define("_FILE_OFFSET_BITS", Some("64"));
+
         let walloc_dir = Path::new("walloc");
         cc.include(walloc_dir);
         cc.file(walloc_dir.join("walloc.c"));
+
+        let libc_wasm_dir = Path::new("libc_wasm");
+        cc.include(libc_wasm_dir);
+        cc.file(libc_wasm_dir.join("calloc.c"));
     }
 
     cc.compile("openjp2");
