@@ -49,7 +49,7 @@ fn main() {
     if target_arch == "wasm32" {
         let walloc_dir = Path::new("walloc");
         cc.include(walloc_dir);
-        cc.file(walloc_dir.join("walloc.c");
+        cc.file(walloc_dir.join("walloc.c"));
     }
 
     cc.compile("openjp2");
