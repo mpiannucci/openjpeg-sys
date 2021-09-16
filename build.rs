@@ -14,6 +14,10 @@ fn main() {
     cc.include("config");
     cc.define("OPJ_STATIC", Some("1"));
     cc.define("MUTEX_stub", Some("1")); // FIXME define MUTEX_win32 or MUTEX_pthread
+    let target_arch = std::env::var("CARGO_CFG_TARGET_ARCH").expect("CARGO_CFG_TARGET_ARCH");
+    if target_arch == "wasm32" {
+        cc.define("_FILE_OFFSET_BITS", Some("64"));
+    }
 
     let files = [
         "thread.c",
