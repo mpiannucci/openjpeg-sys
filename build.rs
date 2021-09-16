@@ -53,7 +53,7 @@ fn main() {
         cc.include(walloc_dir);
         cc.file(walloc_dir.join("walloc.c"));
 
-        let libc_wasm_dir = Path::new("libc_wasm");
+        let libc_wasm_dir = Path::new("libc-wasm");
         cc.include(libc_wasm_dir);
         cc.file(libc_wasm_dir.join("calloc.c"));
     }
